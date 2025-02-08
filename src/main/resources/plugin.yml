@@ -1,8 +1,19 @@
 name: BlockDisplayEditor
-version: '1.0'
+version: '${version}'
 main: creeperpookie.blockdisplayeditor.BlockDisplayEditor
 api-version: '1.21'
 prefix: BlockDisplayEditor
 authors: [ CreeperPookie ]
 description: A spigot plugin to help with editing block displays from in game!
 website: https://github.com/CreeperPookie/BlockDisplayEditor
+commands:
+  blockdisplay:
+    aliases:
+      - bd
+permissions:
+  blockdisplaycommand.item:
+    description: Allows giving the selection stick to other players
+    default: op
+  blockdisplaycommand.reload:
+    description: Allows reloading the BlockDisplayEditor config
+    default: op
