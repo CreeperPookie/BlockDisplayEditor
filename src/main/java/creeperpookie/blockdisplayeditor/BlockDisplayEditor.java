@@ -1,6 +1,8 @@
 package creeperpookie.blockdisplayeditor;
 
 import creeperpookie.blockdisplayeditor.commands.BlockDisplayCommand;
+import creeperpookie.blockdisplayeditor.handlers.BlockDisplayGUIHandler;
+import creeperpookie.blockdisplayeditor.handlers.BlockDisplayHandler;
 import creeperpookie.blockdisplayeditor.items.CustomItem;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -21,17 +23,19 @@ public final class BlockDisplayEditor extends JavaPlugin
 		reloadConfig();
 		CustomItem.registerAll();
 		getCommand("blockdisplay").setExecutor(new BlockDisplayCommand());
+		Bukkit.getPluginManager().registerEvents(new BlockDisplayHandler(), this);
+		Bukkit.getPluginManager().registerEvents(new BlockDisplayGUIHandler(), this);
 	}
 
 	@Override
 	public void onDisable()
 	{
 		getCommand("blockdisplay").unregister(Bukkit.getCommandMap());
-		// Plugin shutdown logic
 	}
 
 	public static void reloadConfigs()
 	{
+		// Currently only one config, but more configs could be added (this would reload them together)
 		getInstance().reloadConfig();
 	}
 

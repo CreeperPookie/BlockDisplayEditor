@@ -1,0 +1,2 @@
+# Set a default block type for newly created block displays
+default-block-type: "minecraft:calcite"

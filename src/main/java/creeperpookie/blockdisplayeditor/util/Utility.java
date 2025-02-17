@@ -464,7 +464,7 @@ public class Utility
 				finalDamage += (0.5 * Math.max(0, level - 1)) + 1.0;
 			}
 			// TODO fix deprecation for entity category
-			if ((enchantment.equals(Enchantment.BANE_OF_ARTHROPODS) && target.getCategory() == EntityCategory.UNDEAD) || (enchantment.equals(Enchantment.BANE_OF_ARTHROPODS) && target.getCategory() == EntityCategory.ARTHROPOD))
+			if ((enchantment.equals(Enchantment.SMITE) && target.getCategory() == EntityCategory.UNDEAD) || (enchantment.equals(Enchantment.BANE_OF_ARTHROPODS) && target.getCategory() == EntityCategory.ARTHROPOD))
 			{
 				finalDamage += level * 2.5;
 			}
@@ -502,7 +502,7 @@ public class Utility
 	{
 		if (strings.size() == 1)
 		{
-			return strings.get(0);
+			return strings.getFirst();
 		}
 		StringBuilder list = new StringBuilder();
 		for (int i = 0; i < strings.size(); i++)

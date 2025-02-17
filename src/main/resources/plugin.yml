@@ -11,9 +11,29 @@ commands:
     aliases:
       - bd
 permissions:
-  blockdisplaycommand.item:
+  blockdisplayeditor.use:
+    description: Allows using the selection stick to modify and change block displays
+    default: op
+  blockdisplayeditor.blockstate:
+    description: Allows setting the blockstate of a selected block display (either for an existing blockstate or away from the server default)
+  blockdisplayeditor.area:
+    description: Allows using the selection stick to select an area for a block display
+    default: op
+  blockdisplayeditor.select:
+    description: Allows managing the current selected block display
+    default: op
+  blockdisplayeditor.transform:
+    description: Allows setting the block display's transformation properties
+    default: op
+  blockdisplayeditor.item:
     description: Allows giving the selection stick to other players
     default: op
-  blockdisplaycommand.reload:
+  blockdisplayeditor.save:
+    description: Allows saving an existing block display entity with the user's block display settings
+    default: op
+  blockdisplayeditor.create:
+    description: Allows creating a block display entity from the specified block display settings
+    default: op
+  blockdisplayeditor.reload:
     description: Allows reloading the BlockDisplayEditor config
     default: op
